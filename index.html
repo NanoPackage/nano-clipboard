@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>nano-clipboard: nano version for clipboard.</title>
+	<meta name="keywords" content="nano-clipboard" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body {
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 10px 20px;
+		}
+		pre {
+			background-color: #f6dcd7;
+			border-radius: 3px;
+			padding: 10px 15px;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			font-weight: bold;
+		}
+		#copy-it {
+			color: red;
+		}
+		#copy-it.green {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+<h1> nano-clipboard </h1>
+<p>
+	Project <a href="https://github.com/hustcc/nano-clipboard">nano-clipboard</a> is a nano version for clipboard.
+	<a id="copy-it" href="#" onclick="javascript:nanoClipboardDemo();">Copy it's url.</a>
+</p>
+
+<script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sorry for ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7292810486004926"
+     data-ad-slot="7806394673"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<h2> Install </h2>
+<pre>
+npm install nano-clipboard </pre>
+<p> Then import it. </p>
+<pre>
+// import library use script tag.
+&lt;script type="text/javascript" src="./index.js"&gt;&lt;/script&gt;
+
+// or
+var nanoClipboard = require('nano-clipboard');
+
+// or
+import nanoClipboard from 'nano-clipboard';
+</pre>
+
+<h3>Usage</h3>
+<pre>
+// copy the string into clipboard, when failed, use prompt instead.
+
+nanoClipboard('I will copy `Hello world` to clipboard.', true);
+</pre>
+<hr />
+
+<p>
+	The code of nano-clipboard hosted on Github, click <a href="https://github.com/hustcc/nano-clipboard">here</a>. Welcome to issue or pull request.
+</p>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+	function nanoClipboardDemo() {
+	  var copyBtn = document.getElementById('copy-it');
+	  if (nanoClipboard('https://github.com/hustcc/nano-clipboard', true)) {
+			copyBtn.textContent = 'Done!';
+      copyBtn.className = 'green';
+	  } else {
+	    copyBtn.textContent = 'Fail';
+	  }
+	  setTimeout(function() {
+      copyBtn.textContent = 'Copy it\'s url.';
+      copyBtn.className = '';
+	  }, 500);
+	}
+</script>
+</body>
+</html>
