@@ -1,4 +1,4 @@
-# [nano-clipboard](http://git.hust.cc/nano-clipboard) [![npm](https://img.shields.io/npm/v/nano-clipboard.svg)](https://www.npmjs.com/package/nano-clipboard)
+# [nano-clipboard](http://np.hust.cc/nano-clipboard) [![npm](https://img.shields.io/npm/v/nano-clipboard.svg)](https://www.npmjs.com/package/nano-clipboard)
 
 ![ie](http://browserbadge.com/ie/9) ![chrome](http://browserbadge.com/chrome/42) ![firefox](http://browserbadge.com/firefox/41)
 
