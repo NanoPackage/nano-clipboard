@@ -19,10 +19,10 @@
 
   /**
    * use command to copy. https://github.com/sindresorhus/copy-text-to-clipboard
-   * @param text
+   * @param input
    * @returns {boolean}
    */
-  function copyWithCommand(text) {
+  function copyWithCommand(input) {
     var el = document.createElement('textarea');
 
     el.value = input;
