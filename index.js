@@ -18,33 +18,51 @@
 }(typeof window !== 'undefined' ? window : this, function () {
 
   /**
-   * use command to copy.
+   * use command to copy. https://github.com/sindresorhus/copy-text-to-clipboard
    * @param text
    * @returns {boolean}
    */
   function copyWithCommand(text) {
-    try {
-      // 1. create input
-      var input = document.createElement('input');
-      input.style.display = 'absolute';
-      input.style.left = '-1px';
-      input.style.bottom = '-1px';
-      input.type = 'text';
-      input.value = text;
-      document.body.appendChild(input);
+    var el = document.createElement('textarea');
 
-      // 2. copy text
-      input.select();
-      var success = document.execCommand('Copy');
+    el.value = input;
 
-      // 3. remove after copied
-      document.body.removeChild(input);
+    // Prevent keyboard from showing on mobile
+    el.setAttribute('readonly', '');
 
-      // 4. return
-      return success;
-    } catch (_) {
-      return false;
+    el.style.contain = 'strict';
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    el.style.fontSize = '12pt'; // Prevent zooming on iOS
+
+    const selection = document.getSelection();
+    var originalRange = false;
+    if (selection.rangeCount > 0) {
+      originalRange = selection.getRangeAt(0);
     }
+
+    document.body.appendChild(el);
+    el.select();
+
+    // Explicit selection workaround for iOS
+    el.selectionStart = 0;
+    el.selectionEnd = input.length;
+
+    var success = false;
+    try {
+      success = document.execCommand('copy');
+    } catch (err) {
+      success = false;
+    }
+
+    document.body.removeChild(el);
+
+    if (originalRange) {
+      selection.removeAllRanges();
+      selection.addRange(originalRange);
+    }
+
+    return success;
   }
 
   /**

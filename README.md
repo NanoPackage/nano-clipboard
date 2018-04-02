@@ -1,6 +1,6 @@
 # [nano-clipboard](http://np.hust.cc/nano-clipboard) [![npm](https://img.shields.io/npm/v/nano-clipboard.svg)](https://www.npmjs.com/package/nano-clipboard)
 
-![ie](http://browserbadge.com/ie/9) ![chrome](http://browserbadge.com/chrome/42) ![firefox](http://browserbadge.com/firefox/41)
+> Copied and translated to ES5 from [copy-text-to-clipboard](https://github.com/sindresorhus/copy-text-to-clipboard), and add backup copy method.
 
 
 ## How to use
@@ -28,4 +28,3 @@ Function `nanoClipboard` has 2 parameters.
 ## MIT
 
 MIT@[hustcc](https://github.com/hustcc)
-

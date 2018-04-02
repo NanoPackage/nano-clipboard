@@ -1,11 +1,10 @@
 {
   "name": "nano-clipboard",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "nano verson for clipboard.",
   "main": "index.js",
   "repository": {
-    "type": "git",
-    "url": "git status"
+    "type": "git"
   },
   "keywords": [
     "nano-clipboard",
